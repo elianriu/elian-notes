@@ -6,10 +6,10 @@ const siteMetadata = {
   description: 'Personal blog by me. I explain with words and code.',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://xxxxx',
+  siteUrl: 'https://elianriu.github.io/elian-notes/',
   siteRepo: 'https://github.com/elianriu/elian-notes',
-  siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
-  socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
+  siteLogo: `${process.env.BASE_PATH || ''}/elian-notes/images/logo.png`,
+  socialBanner: `${process.env.BASE_PATH || ''}/elian-notes/images/twitter-card.png`,
   email: 'preside.russian@gmail.com',
   github: 'https://github.com/elianriu',
   youtube: 'https://youtube.com/@elianriu',
@@ -78,7 +78,7 @@ const siteMetadata = {
   search: {
     provider: 'kbar', // kbar or algolia
     kbarConfig: {
-      searchDocumentsPath: `${process.env.BASE_PATH || ''}/search.json`, // path to load documents to search
+      searchDocumentsPath: `${process.env.BASE_PATH || ''}/elian-notes/search.json`, // path to load documents to search
     },
     // provider: 'algolia',
     // algoliaConfig: {

@@ -40,7 +40,9 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
                 </div>
               </dl>
               <div className="flex flex-wrap">
-                {tags?.map((tag) => <Tag key={tag} text={tag} />)}
+                {tags?.map((tag) => (
+                  <Tag key={tag} text={tag} />
+                ))}
               </div>
             </div>
           </header>

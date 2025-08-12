@@ -5,9 +5,28 @@ import ListLayout from '@/layouts/ListLayout'
 import { allBlogs } from 'contentlayer/generated'
 
 const POSTS_PER_PAGE = 5
-export const runtime = 'edge'
+// export const runtime = 'edge'
 
 export const metadata = genPageMetadata({ title: 'Archives' })
+
+// Generate static params for all years that have posts
+export async function generateStaticParams() {
+  const posts = sortPosts(allBlogs.filter((post) => post.date))
+  const yearsSet = new Set<string>()
+
+  // Extract unique years from posts
+  posts.forEach((post) => {
+    if (post.date) {
+      const year = new Date(post.date).getFullYear().toString()
+      yearsSet.add(year)
+    }
+  })
+
+  // Convert to the required format
+  return Array.from(yearsSet).map((year) => ({
+    years: year,
+  }))
+}
 
 export default async function ArchivesPages(props: { params: Promise<{ years: string }> }) {
   const params = await props.params

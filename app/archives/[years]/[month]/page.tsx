@@ -7,7 +7,32 @@ import { allBlogs } from 'contentlayer/generated'
 const POSTS_PER_PAGE = 5
 
 export const metadata = genPageMetadata({ title: 'Archives' })
-export const runtime = 'edge'
+export const dynamic = 'force-static'
+
+// Generate static params for all year/month combinations
+export async function generateStaticParams() {
+  const posts = sortPosts(allBlogs.filter((post) => post.date))
+  const dateSet = new Set<string>()
+
+  // Extract unique year-month combinations from posts
+  posts.forEach((post) => {
+    if (post.date) {
+      const date = new Date(post.date)
+      const year = date.getFullYear().toString()
+      const month = (date.getMonth() + 1).toString().padStart(2, '0')
+      dateSet.add(`${year}-${month}`)
+    }
+  })
+
+  // Convert to the required format
+  return Array.from(dateSet).map((yearMonth) => {
+    const [years, month] = yearMonth.split('-')
+    return {
+      years,
+      month,
+    }
+  })
+}
 
 export default async function ArchivesPages(props: {
   params: Promise<{ years: string; month: string }>
