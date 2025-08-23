@@ -1,6 +1,16 @@
 {
   "archives": [
     {
+      "year": "2025",
+      "count": 1,
+      "months": [
+        {
+          "month": "08",
+          "count": 1
+        }
+      ]
+    },
+    {
       "year": "2022",
       "count": 1,
       "months": [
