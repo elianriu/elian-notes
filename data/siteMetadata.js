@@ -10,7 +10,7 @@ const siteMetadata = {
   siteRepo: 'https://github.com/elianriu/elian-notes',
   siteLogo: `${process.env.BASE_PATH || ''}/elian-notes/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/elian-notes/images/twitter-card.png`,
-  email: 'preside.russian@gmail.com',
+  email: 'presiden.russian@gmail.com',
   github: 'https://github.com/elianriu',
   youtube: 'https://youtube.com/@elianriu',
   locale: 'en-US',
