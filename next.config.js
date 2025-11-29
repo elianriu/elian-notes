@@ -28,10 +28,10 @@ const securityHeaders = [
     value: 'strict-origin-when-cross-origin',
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
-  // {
-  //   key: 'X-Frame-Options',
-  //   value: 'DENY',
-  // },
+  {
+    key: 'X-Frame-Options',
+    value: 'DENY',
+  },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
   {
     key: 'X-Content-Type-Options',
@@ -54,29 +54,32 @@ const securityHeaders = [
   },
 ]
 
+const output = process.env.EXPORT ? 'export' : undefined
+const basePath = process.env.BASE_PATH || undefined
+const unoptimized = process.env.UNOPTIMIZED ? true : undefined
+
 /**
- * @type {import('next').NextConfig}
- */
+ * @type {import('next/dist/next-server/server/config').NextConfig}
+ **/
 module.exports = () => {
   const plugins = [withContentlayer, withBundleAnalyzer]
   return plugins.reduce((acc, next) => next(acc), {
-    output: 'export', // Static export
-    basePath: process.env.BASE_PATH || '/elian-notes',
-    assetPrefix: '/elian-notes/',
-    trailingSlash: true, // Required for static exports
+    output,
+    basePath: '/elian-notes',
     reactStrictMode: true,
+    trailingSlash: false,
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     eslint: {
       dirs: ['app', 'components', 'layouts', 'scripts'],
     },
     images: {
-      unoptimized: true, // Required for static exports
       remotePatterns: [
         {
           protocol: 'https',
           hostname: 'picsum.photos',
         },
       ],
+      unoptimized,
     },
     async headers() {
       return [
