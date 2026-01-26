@@ -1,18 +1,18 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Elian Riu',
-  author: 'elianriu',
-  headerTitle: 'Elian Riu',
+  title: 'Darvin S',
+  author: 'nagacoder',
+  headerTitle: 'Darvin S',
   description: 'Personal blog by me. I explain with words and code.',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://elianriu.github.io/elian-notes/',
-  siteRepo: 'https://github.com/elianriu/elian-notes',
-  siteLogo: `${process.env.BASE_PATH || ''}/elian-notes/images/logo.png`,
-  socialBanner: `${process.env.BASE_PATH || ''}/elian-notes/images/twitter-card.png`,
-  email: 'presiden.russian@gmail.com',
-  github: 'https://github.com/elianriu',
-  youtube: 'https://youtube.com/@elianriu',
+  siteUrl: 'https://nagacoder.github.io/notes/',
+  siteRepo: 'https://github.com/nagacoder/notes',
+  siteLogo: `${process.env.BASE_PATH || ''}/notes/images/logo.png`,
+  socialBanner: `${process.env.BASE_PATH || ''}/notes/images/twitter-card.png`,
+  email: 'sinagadarvin@gmail.com',
+  github: 'https://github.com/nagacoder',
+  youtube: 'https://youtube.com/@nagacoder',
   locale: 'en-US',
   // set to true if you want a navbar fixed to the top
   stickyNav: false,
@@ -54,7 +54,7 @@ const siteMetadata = {
     giscusConfig: {
       // Visit the link below, and follow the steps in the 'configuration' section
       // https://giscus.app/
-      repo: 'elianriu/elian-notes',
+      repo: 'nagacoder/notes',
       repositoryId: 'R_kgDOPcd2mw',
       category: 'General',
       categoryId: 'DIC_kwDOPcd2m84CuGWF',
@@ -78,7 +78,7 @@ const siteMetadata = {
   search: {
     provider: 'kbar', // kbar or algolia
     kbarConfig: {
-      searchDocumentsPath: `${process.env.BASE_PATH || ''}/elian-notes/search.json`, // path to load documents to search
+      searchDocumentsPath: `${process.env.BASE_PATH || ''}/notes/search.json`, // path to load documents to search
     },
     // provider: 'algolia',
     // algoliaConfig: {

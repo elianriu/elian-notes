@@ -4,7 +4,7 @@
 
 </div>
 
-# [Elian Notes](https://www.xxx.com/)
+# [Notes](https://www.xxx.com/)
 
 > Based off [tailwind-nextjs-starter-blog](https://GitHub.com/timlrx/tailwind-nextjs-starter-blog)
 
@@ -151,4 +151,4 @@ canonicalUrl: https://tailwind-nextjs-starter-blog.vercel.app/blog/introducing-t
 
 ## License
 
-[MIT](https://github.com/elianriu/elianriu.git/blob/main/LICENSE)
+[MIT](https://github.com/nagacoder/nagacoder.git/blob/main/LICENSE)
